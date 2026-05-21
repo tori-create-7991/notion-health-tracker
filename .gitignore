@@ -61,3 +61,6 @@ Thumbs.db
 *.tar.gz
 .cache/
 .logs/
+
+# Local generated artifacts
+expo-qr-code.png
