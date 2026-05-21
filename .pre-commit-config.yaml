@@ -1,0 +1,28 @@
+# ハーネス: pre-commit 層 (~1-10s)
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
+    hooks:
+      - id: shellcheck
+        args: [--severity=error]
+
+  - repo: local
+    hooks:
+      - id: ast-grep
+        name: ast-grep scan
+        entry: ast-grep scan
+        language: system
+        pass_filenames: false
+        files: '\.(sh|bash)$'
