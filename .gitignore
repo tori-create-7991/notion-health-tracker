@@ -59,8 +59,10 @@ Thumbs.db
 # Build files
 *.tgz
 *.tar.gz
+*.ipa
 .cache/
 .logs/
+build/
 
 # Local generated artifacts
 expo-qr-code.png
